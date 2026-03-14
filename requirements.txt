@@ -1,12 +1,8 @@
 python-dotenv
 google-generativeai
+google-genai
 fastapi
 uvicorn
 requests
-opencv-python
 Pillow
-librosa
-soundfile
-moviepy
-imageio-ffmpeg
-webrtcvad
+pydantic
