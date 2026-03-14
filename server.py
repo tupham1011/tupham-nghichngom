@@ -15,7 +15,10 @@ app = FastAPI(title="Agent 6: Banana AI Banner Generator API")
 
 # Path discovery
 STATIC_DIR = Path(__file__).parent / "static"
-STATIC_DIR.mkdir(exist_ok=True)
+try:
+    STATIC_DIR.mkdir(exist_ok=True)
+except Exception:
+    pass
 
 # CORS
 app.add_middleware(

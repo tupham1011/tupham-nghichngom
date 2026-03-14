@@ -44,7 +44,10 @@ TRON_DOI_DIR = BASE_DIR / "personas"
 KNOWHOW_DIR = BASE_DIR / "personas"
 STATIC_DIR = Path(__file__).parent / "static"
 GENERATED_DIR = STATIC_DIR / "generated"
-GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+try:
+    GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+except Exception:
+    pass
 
 PERSONA_FILES = {
     1: "1. Persona_MeChoCon_NghiHocTrungTam.md",
