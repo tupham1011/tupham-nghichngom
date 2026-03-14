@@ -1,0 +1,223 @@
+Phase,Level Sales,Level tâm lý khách,,Giai đoạn,Suy nghĩ của khách hàng,MAT=B,,,,,user action by funnel,,,,,,,,
+,,,,,,Motivation,Ability,Trigger,Action,User Action,In-app action,,Sales- Dấu hiệu,Sales- Dấu hiệu cụ thể khi trò chuyện,Inbound,Mục tiêu đo,Metrics,Note ưu tiên,
+Awareness,L0,Problem Awareness,A0,Chưa nhận thức,"""Tôi không nhận ra việc học piano là điều cần làm trong cuộc sống này""",Không,Không,Không,Không làm gì,Tiếp nhận thông tin thụ động,,,,,,,"Thruplays các video về piano
+Cost per thruplays so với benchmark
+Time spend on ccontent piano related
+Engagement (Like share content) các content piano related
+CPM các content piano related",,
+,,,A1,Nhận biết vấn đề,"""Ồ, học Piano cũng vui, nhưng tôi không cần phải học ngay bây giờ.""",Không/ Thấp,-,Không,"So sánh với các vấn đề khác
+Cảm thấy vấn đề này bé
+Không ưu tiên",,,,,,,,,,
+,,,A2.A1,Cảm giác bất khả thi,"""Học Piano khó, tôi không nghĩ mình sẽ học được với khả năng tài chính và thời gian rảnh của tôi""",Thấp,Không (đối với các giải pháp phổ biến hiện tại),Không,"Không có giải pháp mới
+Các vấn đề khác có nhiều giải pháp dễ làm hơn
+Bỏ cuộc, không giải quyết",,,,,,,,,,
+,,,A2.A2,,"""Học Piano khó, tôi đã từng thử tìm kiếm các phương pháp học với mình nhưng không thấy phù hợp, không hiệu quả""",,,,,,,,,,,,,,
+,,,A2.B,Nhận thức về chi phí,"""Học Piano tốn rất nhiều chi phí cơ hội về tiền, về thời gian, nỗ lực công sức bỏ vào, liệu nó có đáng để mình đánh đổi không?""",Thấp,Thấp (chi phí),Không,Ngại đầu tư,,,,,,,,,Thiếu content dọc chất lượng cao,
+,,,A2.C,Tránh né & Bình thường hóa,"""Cả thế giới chỉ có người giỏi mới học được Piano thôi, mình bình thường, mình không học được cũng không sao.""",Thấp,"Trung bình/ Cao
+(có tiền có tgian, ít physical & mental efforts)",Xã hội không action,Không thấy cần làm,,,,,,,Đo độ trend về việc học nhạc của xã hội,,,
+,L1,Solution Awareness,A3,Nhận thức sâu sắc & Định hình lại - H4,"""Khoan đã, mình có thể học được Piano, không nhiều rào cản như mình từng nghĩ.""",Thấp/ Trung Bình,Thấp/ Trung Bình,Tưởng tượng đến tương lai,Sẵn sàng tìm hiểu các phương pháp,"Tìm kiếm thông tin về piano, học piano
+Trò chuyện, nhắc đến nhiều, quan tâm tới hashtag/ tag video, post, blog, ... liên quan đến piano",,,"""Chưa học piano bao giờ, chưa biết gì, giờ mới học từ đầu thì có được không?""",,,,"Google trends
+Doanh thu, thống kê ngành liên quan tới đàn
+Xu hướng doanh thu, lượt quan tâm của toàn bộ thị trường học đàn
+Số lượng hashtag, video tag, post về học nhạc
+Lượt xem Youtube, Tiktok, Facebook về các video học nhạc
+CPM các content piano related
+Số giá L1 (cost per L1)
+Time spend on content learning piano related",,
+,,,,,,,,,,,,"Survey
+
+User profile age
+
+",Hỏi tách segment,,Survey,,,,
+,,,A4,Hành động đầu tiên - H2,"""Có lẽ mình nên tìm hiểu những cách học Piano phù hợp với bản thân, chắc chắn sẽ có cách phù hợp với mình.""",Trung bình,Thấp/ Trung Bình,,Sẵn sàng tiếp nhận thông tin,,,,"-Không hiểu gì về APP
+-Hiểu nhầm về APP
+","-Trường này là gì vậy em?
+-Thầy nào dạy
+-Học online à em
+-Có giáo viên hướng dẫn không?
+-Gởi video bài giảng hay sao
+--Mua phần mềm à?
+-Học như nào vậy em?",,,,,
+,,Interest,A5,Nhận thức có các cách học (trong đó có app) - H3,"""Học Piano đang có các cách gì nhỉ? Hình như có mấy cách này, để xem có phù hợp với mình không""",Trung bình,Thấp/ Trung Bình,,,"Đăng ký tìm hiểu thông tin
+Đăng ký nhận tài liệu free
+Comment quan tâm các bài viết liên quan đến Piano
+Inbox page trung tâm học, page non brand, join community học đàn,..",Install,,"
+
+BIẾT đến sự tồn tại của việc học piano qua app Simpia
+(app, online, tự học)","-Nó kết nối như nào
+
+-Đăng ký theo năm hay sao?
+-Có dễ không",,,"Cost per L1
+Tỉ lệ L1/L0
+Số comment
+Cost per comment
+Website traffic
+CVR1 (tỉ lệ lead/ view ldp)
+CTR content
+Time spend on content
+CPM",Hiện tượng: L1/ L0= 30-40% -> cao hơn so với benchmark (15-20%),Lâu dài
+Acquisition,L2,,A6,Cân nhắc app có phải 1 giải pháp - H4,"""Hình như ngoài các cách truyền thống còn có cách học mới là qua app và nó thật sự hiệu quả nữa. Nhưng có thể có nhiều rủi ro""",Trung bình,Trung bình,,"So sánh với các substitute (các giải pháp học piano hiện có), không đưa ra quyết định","Tìm hiểu các giải pháp học piano cụ thể khác nhau: Học online video, học trung tâm, muốn giáo viên kèm, học qua app
+có đàn hoặc cân nhắc mua đàn trong thời gian ngắn
+",,"
+dialog_setting_community_click","- Hiểu về cách thức, hình thức học 
+- Hỏi về các tính  năng
+- Học với app thì học được cái gì (có nền tảng rồi thì học gì nữa, học lâu r hỏng nền tảng thì học gì nữa) 
+","- Đàn này kết nối được không, kêt nối như nào
+- Lộ trình ra sao?
+","Tham gia community
+Đăng bài trong các community group
+Chat trong các group để hỏi","Đo độ phổ biến, khả năng hiển thị thông tin của app trong quá trình customer so sánh",,,
+,,,A7.A,So sánh chi phí (Ability) - H2,"""Cách học app này cũng hay đấy, nhưng liệu mình có học được với app không nhỉ?""",Trung Bình,Trung bình,,"Do dự, chuẩn bị quyết định thử","Hỏi cụ thể về H2 app: community, inbox page, hỏi người trong cộng đồng, gọi hotline,.. (How to learn, what)",,"
+dialog_setting_question_click
+dialog_setting_midi_connection_open
+dialog_troubleshoot_midi_connection","
+
+Cân nhắc
+Hỏi giá","
+-Học bao lâu thì chơi được
+-1 tài khoản dùng được bao nhiêu thiết bị
+-Giá bao nhiêu",Xem các bài viết về MIDI,,"Các số trên +
+Số câu hỏi (community, sales, hotline,..)
+Traffic FAQ",,
+,,,A7.B,Đánh giá tính khả thi (Motivation) - H3,"""Cách học app này cũng hay đấy, nhưng liệu mình có chơi được với app này không?""",Trung Bình,Trung Bình,,Sắp xếp priority cho việc thử cái gì trước,"Hỏi cụ thể về lộ trình để có được H3 app: học bao lâu, học bài nào, có thời khóa biểu không (How long, how often)",,,"- Hỏi cụ thể về lộ trình học như thế nào?
+- Hỏi học cái này sau có chơi được mấy bài mình thích không?","
+-Có bài A,B,C không?
+-Có nhạc cổ điển/ pop/... không?
+-Các câu hỏi về học đàn overall (có được satisifed trong app không) 
+vd: tư thế, kỹ thuật tay, luyện ngón, nhịp - metronome
+Kĩ thuật ngón
+Âm giai (Scale từng key)
+Rải ngón
+Các vòng hợp âm cơ bản (1 vòng đệm được 100 bài)
+Thị tấu/ đọc sheet nhạc
+Cảm âm
+Thường thức âm nhạc
+Trình diễn, biểu diễn
+Pedal để làm gì?",,,,,
+Activation,,Evaluation,A8,Quyết định thử nghiệm,"""Tôi quyết định sẽ học thử app để trải nghiệm và đưa ra đánh giá với những giả thuyết vừa rồi""",Trung Bình,Trung Bình,"Easy-to-do step
+Có người nhắc, có deadline đăng ký trải nghiệm","Đăng ký web
+Install app","Install app
+Nhận thông tin từ sales, inbound, hỏi nhiều: join community, inbox, trong group, gọi sales",,"play_via_midi_cable
+play_via_midi_bluetooth
+
+
+popup_create_profile_success (signup / signin)
+collect_info_second_post","- Có dây MIDI
+- Hỏi về cách học, tính năng cụ thể, báo lỗi trong app
+","-Ac tải app rồi mà không dùng được (stuck tính năng, rối rắm về lộ trình, chưa được onboard tốt)",Click link Thanh toán trong mail followup sau đăng ký lead,,"Các số trên +
+Install",,
+,,,A8.2,,"""Tôi quyết định học thử nhưng mà tôi bận quá, chưa có thời gian để tải, rồi cứ như vậy mà tôi cho nó trôi tuột luôn",Trung Bình,Thấp/ Trung Bình,,,,,,,,,,,,
+Retention,,Retention,R1,"Học thử
+- dùng những tính năng miễn phí","""Tôi cảm thấy mình có thể học được với ứng dụng đấy""","Cao, đang lên",Trung Bình,Xác nhận từ xã hội,"Trial
+Nhận chăm sóc từ sales, inbound (lead)",Dùng thử các tính năng miễn phí,"- Số ngày sử dụng >1
+- Số session
+- Time per session
+- Playing time
+
+- Hoàn thành B1
+- Tìm kiếm, sử dụng youtube songs từ 3 lần trở lên
+- Số nốt đúng khi practice songs >10
+- Hoàn thành lessons trong 1 bài hát (chord, solo, course_lesson)","Số ngày sử dung: Property:
+user_day_used_count > 1
+
+Course:
+- Hoàn thành B1
+Sonata - course_lesson_unit_complete (LessonID 108)
+
+Songs:
+- Số lần sử dụng youtube songs >2
+ytb_solo_play_start từ 3 lần trở lên
+ytb_solo_play_practice từ 3 lần trở lên
+
+
+- Số nốt đúng khi practice trong songs:
+ytb_solo_play_practice_notes_me_track >10
+ytb_chord_play_practice_notes_me_track>10
+
+- Complete lesson trong songs
+ytb_solo_learn_lesson_to_part_complete
+ytb_chord_learn_lesson_to_part_complete
+course_lesson_unit_complete
+
+- dialog_setting_question_click
+- dialog_setting_midi_connection_open
+- dialog_troubleshoot_midi_connection
+
+Tutor:
+- Khi user hoàn thành bài practice và kết quả hiện thị lên
+tutor_song_practice_result_show
+
+- User practice trong gameplay, số nốt đúng >5
+tutor_song_practice_notes_me_track, me_practice_correct_notes_count>5
+
+Tổng thời gian dùng app > 20p
+user_total_time_spend > 20",- Chủ động quay lại hỏi,"
+-Để thử thêm ít ngày nữa
+-Phần nốt rơi/... này thấy quảng cáo có thì trong app nằm ở đâu?","- Đăng ký 3 ngày dùng thử miễn phí
+- Click xem sách Simpia","Đo độ hứng thú với việc học thử
+Đo độ ""đang lên"" của motivation","L2
+Cost per L2
+Tỉ lệ L2/L1
+FTUE (Thời gian từ install -> hoàn thành bài học đầu tiên)
+Time to first value (TTFV) - Thời gian từ install -> trial
+Số lượt vào các tính năng trả phí (events)
+Trial Rate/ Tỉ lệ active giftcode dùng thử",,
+,,,R1.3,Dormant,"""Tôi dùng thử rồi, thấy không biết học gì, học sao, khó dùng quá""",Trung bình,Cao,,,,,,App không đáp ứng nhu cầu/ bị bug,,,,,,
+,,,,,"""Tôi dùng thử rồi, dùng hết tính năng rồi, thấy không phù hợp""",,,,,,,,,,,,,,
+,,Retention,R2,Trial ,"""Tôi muốn thử hết tất cả các tính năng của app để xem có đáng để đầu tư cho phương pháp học này trong 1 năm không"" ","Cao, đang lên","Cao, đang lên",,"R1
+Nhận chăm sóc từ sales, inbound","Trial: Dùng những tính năng trả tiền mới có (tutor, songs, khóa học cao,..)
+Tìm hiểu cách sử dụng những tính năng trả phí hiệu quả
+
+Quay lại dùng app thường xuyên",,"- Kích hoạt giftcode
+
+- Dialog_paywall_buy_success
+- course_lesson_unit_complete
+LessonID 108
+",Dùng thử mọi tính năng của app (phù hợp với bản thân),,,,"L2
+Tỉ lệ L2/ L1
+Trial Rate
+R1 -> R7
+Session Length
+Frequency use (số ngày vào trong 1 tuần, DAU/WAU)
+Progression Rate (tỉ lệ hoàn thành bài học, thời gian hoàn thành, số nốt đúng/ tổng số nốt,..)
+Lesson Completion Rate
+Learning Streak",,
+,,,R2.3,Dormant,"""Tôi dùng thử tất cả tính năng rồi, thấy không biết học gì, học sao, khó dùng quá""",Trung bình,Cao,,"Mông lung, tìm kiếm hướng dẫn","Drop, không quay lại dùng app",,,,,,,,,
+,,,,,"""Tôi dùng thử tất cả tính năng rồi, dùng hết tính năng rồi, thấy không phù hợp""",,,,Không dùng nữa/xóa app,"Xóa app
+Từ chối nhận sales, các thông điệp inbound",,"Last seen 7 ngày trước
+revenue_cat_cancellation
+revenue_cat_billing_issue",App không đáp ứng nhu cầu/ bị bug,"""Chị xài rồi, thấy nhanh quá""",,,,,
+,L3,,R3,Sẵn sàng trả tiền để học tiếp,"""Tôi cảm thấy app đáng tiền và đủ hiệu quả để tôi đặt cược tương lai""","Cao, đang lên","Cao, đang lên",,"R7
+Có hành vi xuống tiền",Tìm hiểu phương thức thanh toán,"- Số ngày sử dụng > x
+- DAU/WAU > x
+- Total playing time > x","Số người sử dụng profile>1:
+user_profile_using_count >1
+
+Click vào community:
+dialog_setting_community_click
+
+user_day_used_count > x","-Đã dùng app rồi và thấy hài lòng, cân nhắc mua","-Thử rồi thấy cũng được, giá như nào
+-Thấy trong app giá khác, làm sao mua được khuyến mãi
+-Mua xong thì liên kết như nào
+","- Đăng ký nhận sách Simpia
+- Tham gia community
+- Click link Thanh toán trong mail followup sau đăng ký lead",," L3
+Tỉ lệ L3/ L2
+Số người vào trang thanh toán của L2
+Số inbox hỏi cách thanh toán
+R1 -> R7",,
+,,,R3.2,,"""Tôi cảm thấy app đáng tiền và đủ hiệu quả để tôi đặt cược tương lai nhưng giờ bận quá, chưa có thời gian học nên để khi nào rảnh học thì mua",Trung Bình,Thấp/ Trung Bình,,,,,,,,,,,,
+Revenue,L4,Customer,R4,Niềm tin vào phương pháp,"""Tôi tin rằng tôi có thể học và chơi thành công đàn piano với app này.""","Cao, đang lên","Cao, đang lên",,Mua,"Mua, trả tiền",,,,,,,"L4
+Payment Rate: Từ install -> purchase (aim 0.85%)
+Conversion Rate từ Trial -> Purchase (aim 25%)
+Tỉ lệ L4/L1 (CVR2) (aim 25%)
+Tỉ lệ L4/L3 (aim 90%)
+Revenue
+ARPU",,
+Referrals,,Loyalty,R5,Duy trì hành động & Hình thành thói quen,"""Tôi đang thấy tiến triển và có động lực tiếp tục học đàn Piano mỗi ngày, tạo được thói quen tốt và sở thích tốt.""",Cao,Cao,Xác nhận từ xã hội,Hình thành thói quen,Quay lại dùng app thường xuyên,,,,,,,"Churn
+Renewal
+NPS
+Social Sentiment
+UGC Contents",,
+,,,R5.2,Học đều đặn nhưng chưa gắn bó với thương hiệu,"""Tôi thấy học Simpia cũng được, cũng vui, tạo được thói quen tốt cho tôi, nhưng chưa đủ impact để tôi đi khoe và lan tỏa thông điệp""",Cao,Cao,,"Học đủ bài, đều đặn",,,,,,,,,,
+,,Referrals,R6,Trao quyền & Lan tỏa,"""Tôi đã giải quyết được việc học Piano thật dễ dàng và vui vẻ, tôi cần phải lan tỏa và chia sẻ năng lượng này cho nhiều người hơn.""",Cao,Cao,Nhận thức về bản thân,Nhận thấy bản thân đang tiến bộ,Giới thiệu cho người khác,,,,,,,Referral rate,,

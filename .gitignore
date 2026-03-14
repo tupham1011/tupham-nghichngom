@@ -1,0 +1,7 @@
+.env
+__pycache__/
+static/generated/
+*.png
+*.jpeg
+*.jpg
+agent6_bridge.json

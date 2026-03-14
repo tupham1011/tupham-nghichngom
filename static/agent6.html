@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent 6 – Banana AI Banner Generator</title>
+    <meta name="description" content="Tự động sinh ảnh banner quảng cáo Simpia Trọn Đời bằng AI">
+    
+    <!-- Google Fonts: Material Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <style>
+        /* ============ DESIGN TOKENS (Material Design 3) ============ */
+        :root {
+            /* Surface */
+            --md-sys-color-background: #0f1118;
+            --md-sys-color-surface: #1a1c25;
+            --md-sys-color-surface-variant: #22252f;
+            --md-sys-color-surface-container: #1e2029;
+            --md-sys-color-surface-container-high: #282a34;
+            --md-sys-color-surface-container-highest: #33353f;
+            --md-sys-color-surface-bright: #3a3c47;
+            
+            /* Primary */
+            --md-sys-color-primary: #a8c7fa;
+            --md-sys-color-primary-container: #004a77;
+            --md-sys-color-on-primary: #003258;
+            --md-sys-color-on-primary-container: #d1e4ff;
+            
+            /* Secondary */
+            --md-sys-color-secondary: #bcc7dc;
+            --md-sys-color-secondary-container: #3b4858;
+            --md-sys-color-on-secondary: #263141;
+            
+            /* Tertiary */
+            --md-sys-color-tertiary: #d5bee4;
+            --md-sys-color-tertiary-container: #5b3d6e;
+            
+            /* Error */
+            --md-sys-color-error: #ffb4ab;
+            --md-sys-color-error-container: #93000a;
+            
+            /* Outline & Text */
+            --md-sys-color-outline: #8e9099;
+            --md-sys-color-outline-variant: #44464f;
+            --md-sys-color-on-surface: #e3e2e6;
+            --md-sys-color-on-surface-variant: #c4c6d0;
+            --md-sys-color-inverse-surface: #e3e2e6;
+            --md-sys-color-inverse-on-surface: #1a1c25;
+            
+            /* Accents */
+            --accent-green: #a8dab5;
+            --accent-amber: #f0c869;
+            --accent-rose: #f2a6b6;
+            
+            /* Elevation */
+            --md-sys-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.30);
+            --md-sys-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.30);
+            --md-sys-elevation-3: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.30);
+            
+            /* Shape */
+            --md-sys-shape-corner-xs: 4px;
+            --md-sys-shape-corner-sm: 8px;
+            --md-sys-shape-corner-md: 12px;
+            --md-sys-shape-corner-lg: 16px;
+            --md-sys-shape-corner-xl: 28px;
+            --md-sys-shape-corner-full: 9999px;
+            
+            /* Motion */
+            --md-sys-motion-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
+            --md-sys-motion-emphasized: cubic-bezier(0.2, 0.0, 0, 1.0);
+        }
+
+        /* ============ RESET & BASE ============ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ============ TOP APP BAR ============ */
+        .top-app-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 24px;
+            background: var(--md-sys-color-surface);
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+            backdrop-filter: blur(20px);
+        }
+        
+        .top-app-bar .nav-icon {
+            width: 48px; height: 48px;
+            border-radius: var(--md-sys-shape-corner-full);
+            display: grid; place-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--md-sys-color-on-surface);
+            border: none; background: transparent;
+        }
+        .top-app-bar .nav-icon:hover { background: var(--md-sys-color-surface-variant); }
+        
+        .top-app-bar .title-block { flex: 1; }
+        .top-app-bar .title-block h1 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            color: var(--md-sys-color-on-surface);
+        }
+        .top-app-bar .title-block .subtitle {
+            font-size: 12px;
+            color: var(--md-sys-color-on-surface-variant);
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+        
+        .top-app-bar .status-chip {
+            display: flex; align-items: center; gap: 6px;
+            padding: 6px 16px;
+            border-radius: var(--md-sys-shape-corner-full);
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            font-size: 12px; font-weight: 500;
+        }
+        .top-app-bar .status-chip .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* ============ MAIN LAYOUT ============ */
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* ============ STEPPER ============ */
+        .stepper {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 32px;
+            padding: 16px 24px;
+            background: var(--md-sys-color-surface);
+            border-radius: var(--md-sys-shape-corner-lg);
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+        .step-item {
+            display: flex; align-items: center; gap: 10px;
+            flex: 1;
+            cursor: default;
+            transition: all 0.3s var(--md-sys-motion-standard);
+        }
+        .step-item .step-num {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: grid; place-items: center;
+            font-size: 14px; font-weight: 600;
+            background: var(--md-sys-color-surface-container-highest);
+            color: var(--md-sys-color-on-surface-variant);
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .step-item.active .step-num {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+        .step-item.completed .step-num {
+            background: var(--accent-green);
+            color: #0f1118;
+        }
+        .step-item .step-label {
+            font-size: 13px;
+            color: var(--md-sys-color-on-surface-variant);
+            white-space: nowrap;
+        }
+        .step-item.active .step-label {
+            color: var(--md-sys-color-primary);
+            font-weight: 600;
+        }
+        .step-item.completed .step-label { color: var(--accent-green); }
+        
+        .step-divider {
+            flex: 0.5;
+            height: 1px;
+            background: var(--md-sys-color-outline-variant);
+            margin: 0 8px;
+        }
+        .step-divider.completed { background: var(--accent-green); }
+
+        /* ============ SCREENS ============ */
+        .screen { display: none; animation: fadeIn 0.3s var(--md-sys-motion-standard); }
+        .screen.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============ SCREEN 1: PERSONA GRID ============ */
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-title .material-icons-round { font-size: 20px; color: var(--md-sys-color-primary); }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
+        }
+        .persona-card {
+            position: relative;
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--md-sys-shape-corner-lg);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s var(--md-sys-motion-standard);
+            overflow: hidden;
+        }
+        .persona-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--md-sys-shape-corner-lg);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .persona-card:hover {
+            border-color: var(--md-sys-color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--md-sys-elevation-2);
+        }
+        .persona-card:hover::before { opacity: 0.08; background: var(--md-sys-color-primary); }
+        .persona-card.selected {
+            border-color: var(--md-sys-color-primary);
+            background: var(--md-sys-color-primary-container);
+        }
+        .persona-card .card-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .persona-card .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: 4px;
+        }
+        .persona-card .card-desc {
+            font-size: 12px;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.4;
+        }
+        .persona-card .segment-badge {
+            position: absolute;
+            top: 12px; right: 12px;
+            padding: 2px 8px;
+            border-radius: var(--md-sys-shape-corner-full);
+            font-size: 10px; font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .segment-badge.seg-12 { background: rgba(168,199,250,0.15); color: var(--md-sys-color-primary); }
+        .segment-badge.seg-3 { background: rgba(213,190,228,0.15); color: var(--md-sys-color-tertiary); }
+
+        /* ============ SCREEN 2: P-LEVEL MATRIX ============ */
+        .matrix-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            background: var(--md-sys-color-surface);
+            border-radius: var(--md-sys-shape-corner-lg);
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+        .matrix-header .persona-badge {
+            font-size: 36px;
+        }
+        .matrix-header .persona-info h3 {
+            font-size: 18px; font-weight: 600;
+        }
+        .matrix-header .persona-info p {
+            font-size: 13px; color: var(--md-sys-color-on-surface-variant);
+        }
+        
+        .matrix-table-wrapper {
+            overflow-x: auto;
+            border-radius: var(--md-sys-shape-corner-lg);
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .matrix-table th {
+            background: var(--md-sys-color-surface-container-high);
+            color: var(--md-sys-color-on-surface);
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            border-bottom: 2px solid var(--md-sys-color-outline-variant);
+            white-space: nowrap;
+        }
+        .matrix-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+            vertical-align: top;
+            background: var(--md-sys-color-surface);
+        }
+        .matrix-table tr:hover td {
+            background: var(--md-sys-color-surface-variant);
+        }
+        .matrix-table .code-cell {
+            font-family: 'Inter', monospace;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+            white-space: nowrap;
+            min-width: 60px;
+        }
+        .matrix-table .stage-cell {
+            font-weight: 500;
+            color: var(--md-sys-color-on-surface);
+            min-width: 150px;
+        }
+        .matrix-table .thought-cell {
+            color: var(--md-sys-color-on-surface-variant);
+            max-width: 400px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .matrix-table .thought-cell:empty::after {
+            content: '—';
+            color: var(--md-sys-color-outline);
+        }
+        .matrix-table .action-cell {
+            text-align: center;
+        }
+        .btn-select-pain {
+            padding: 8px 16px;
+            border-radius: var(--md-sys-shape-corner-full);
+            border: 1px solid var(--md-sys-color-primary);
+            background: transparent;
+            color: var(--md-sys-color-primary);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .btn-select-pain:hover {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+        
+        .level-chip {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: var(--md-sys-shape-corner-full);
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .level-chip.l1 { background: rgba(168,199,250,0.15); color: var(--md-sys-color-primary); }
+        .level-chip.l2 { background: rgba(240,200,105,0.15); color: var(--accent-amber); }
+        .level-chip.l3 { background: rgba(242,166,182,0.15); color: var(--accent-rose); }
+        .level-chip.l4 { background: rgba(168,218,181,0.15); color: var(--accent-green); }
+
+        .funnel-header {
+            background: var(--md-sys-color-surface-container) !important;
+            color: var(--md-sys-color-primary) !important;
+            text-transform: uppercase;
+            font-size: 11px !important;
+            letter-spacing: 1px;
+        }
+        .funnel-header td {
+            background: var(--md-sys-color-surface-container) !important;
+            padding: 8px 16px !important;
+            font-weight: 700 !important;
+            color: var(--md-sys-color-primary) !important;
+        }
+
+        /* ============ SCREEN 3: IDEAS ============ */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 900px) {
+            .ideas-grid { grid-template-columns: 1fr; }
+        }
+        .idea-card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--md-sys-shape-corner-lg);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .idea-card:hover {
+            border-color: var(--md-sys-color-primary);
+            box-shadow: var(--md-sys-elevation-2);
+        }
+        .idea-card .idea-visual-preview {
+            height: 180px;
+            background: linear-gradient(135deg, var(--md-sys-color-primary-container) 0%, var(--md-sys-color-tertiary-container) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .idea-card .idea-visual-preview .layout-tag {
+            position: absolute;
+            top: 12px; left: 12px;
+            padding: 4px 12px;
+            border-radius: var(--md-sys-shape-corner-full);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .idea-card .idea-visual-preview .preview-headline {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 4px;
+        }
+        .idea-card .idea-visual-preview .preview-sub {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+        }
+        .idea-card .idea-body {
+            padding: 16px;
+        }
+        .idea-card .idea-body .idea-desc {
+            font-size: 13px;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .idea-card .idea-body .idea-rationale {
+            font-size: 12px;
+            color: var(--md-sys-color-on-surface-variant);
+            padding: 10px;
+            background: var(--md-sys-color-surface-variant);
+            border-radius: var(--md-sys-shape-corner-sm);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        .idea-card .idea-body .idea-rationale::before {
+            content: '💡 ';
+        }
+
+        /* ============ SCREEN 4: IMAGE RESULT ============ */
+        .result-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .result-container { grid-template-columns: 1fr; }
+        }
+        .result-image-frame {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--md-sys-shape-corner-lg);
+            padding: 16px;
+            text-align: center;
+        }
+        .result-image-frame img {
+            width: 100%;
+            max-width: 512px;
+            border-radius: var(--md-sys-shape-corner-md);
+            box-shadow: var(--md-sys-elevation-3);
+        }
+        .result-details {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--md-sys-shape-corner-lg);
+            padding: 24px;
+        }
+        .result-details h3 {
+            font-size: 16px; font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--md-sys-color-on-surface);
+        }
+        .prompt-box {
+            background: var(--md-sys-color-surface-variant);
+            border-radius: var(--md-sys-shape-corner-md);
+            padding: 16px;
+            font-family: 'Inter', monospace;
+            font-size: 12px;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.6;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        /* ============ BUTTONS ============ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: var(--md-sys-shape-corner-full);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s var(--md-sys-motion-standard);
+            border: none;
+            letter-spacing: 0.1px;
+        }
+        .btn .material-icons-round { font-size: 18px; }
+        
+        .btn-filled {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+        .btn-filled:hover {
+            box-shadow: var(--md-sys-elevation-1);
+            filter: brightness(1.1);
+        }
+        .btn-filled:disabled {
+            opacity: 0.38;
+            cursor: not-allowed;
+        }
+        
+        .btn-tonal {
+            background: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-surface);
+        }
+        .btn-tonal:hover { filter: brightness(1.1); }
+        
+        .btn-outlined {
+            background: transparent;
+            border: 1px solid var(--md-sys-color-outline);
+            color: var(--md-sys-color-primary);
+        }
+        .btn-outlined:hover {
+            background: rgba(168,199,250,0.08);
+        }
+        
+        .btn-text {
+            background: transparent;
+            color: var(--md-sys-color-primary);
+            padding: 10px 12px;
+        }
+        .btn-text:hover { background: rgba(168,199,250,0.08); border-radius: var(--md-sys-shape-corner-sm); }
+
+        .action-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        /* ============ LOADING ============ */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15,17,24,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 500;
+            place-items: center;
+        }
+        .loading-overlay.active { display: grid; }
+        .loading-card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--md-sys-shape-corner-xl);
+            padding: 48px;
+            text-align: center;
+            box-shadow: var(--md-sys-elevation-3);
+            max-width: 400px;
+        }
+        .loading-card .spinner {
+            width: 48px; height: 48px;
+            border: 3px solid var(--md-sys-color-outline-variant);
+            border-top-color: var(--md-sys-color-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-card h3 {
+            font-size: 16px; font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .loading-card p {
+            font-size: 13px;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        /* ============ UTILITIES ============ */
+        .mt-4 { margin-top: 24px; }
+        .mb-2 { margin-bottom: 12px; }
+        .gap-2 { gap: 12px; }
+        .flex { display: flex; }
+        .flex-wrap { flex-wrap: wrap; }
+        .items-center { align-items: center; }
+        
+        .empty-state {
+            text-align: center;
+            padding: 48px;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        .empty-state .material-icons-round {
+            font-size: 48px;
+            color: var(--md-sys-color-outline);
+            margin-bottom: 12px;
+        }
+
+        /* ============ SCROLLBAR ============ */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline-variant); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--md-sys-color-outline); }
+    </style>
+</head>
+<body>
+
+<!-- TOP APP BAR -->
+<header class="top-app-bar">
+    <a href="/" class="nav-icon" title="Back to Portal">
+        <span class="material-icons-round">arrow_back</span>
+    </a>
+    <div class="title-block">
+        <h1>Agent 6 — Banana AI Banner Generator</h1>
+        <div class="subtitle">Simpia Trọn Đời Creative Engine</div>
+    </div>
+    <div class="status-chip">
+        <div class="dot"></div>
+        Gemini Connected
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="app-container">
+
+    <!-- STEPPER -->
+    <div class="stepper" id="stepper">
+        <div class="step-item active" data-step="1">
+            <div class="step-num">1</div>
+            <div class="step-label">Chọn Persona</div>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="2">
+            <div class="step-num">2</div>
+            <div class="step-label">Chọn Pain Point</div>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="3">
+            <div class="step-num">3</div>
+            <div class="step-label">Xem Idea</div>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="4">
+            <div class="step-num">4</div>
+            <div class="step-label">Sinh Ảnh</div>
+        </div>
+    </div>
+
+    <!-- SCREEN 1: PERSONA SELECTION -->
+    <section class="screen active" id="screen-1">
+        <div class="section-title">
+            <span class="material-icons-round">people</span>
+            Chọn Persona mục tiêu
+        </div>
+        <div class="persona-grid" id="personaGrid">
+            <!-- Rendered by JS -->
+        </div>
+
+        <div class="action-bar">
+            <div></div>
+            <button class="btn btn-filled" id="btnStep1Next" disabled onclick="goToStep2()">
+                <span class="material-icons-round">arrow_forward</span>
+                Tiếp: Chọn Pain Point
+            </button>
+        </div>
+    </section>
+
+    <!-- SCREEN 2: P-LEVEL MATRIX -->
+    <section class="screen" id="screen-2">
+        <div class="matrix-header" id="matrixHeader">
+            <div class="persona-badge" id="matrixIcon">🤱</div>
+            <div class="persona-info">
+                <h3 id="matrixPersonaName">Persona Name</h3>
+                <p id="matrixPersonaDesc">Description</p>
+            </div>
+        </div>
+
+        <div class="section-title mb-2">
+            <span class="material-icons-round">grid_view</span>
+            Ma trận Tâm lý Khách hàng – Chọn 1 Pain Point để sinh Idea
+        </div>
+        
+        <div class="matrix-table-wrapper">
+            <table class="matrix-table" id="matrixTable">
+                <thead>
+                    <tr>
+                        <th style="width:70px">Code</th>
+                        <th style="width:60px">Level</th>
+                        <th style="width:200px">Giai đoạn</th>
+                        <th>Suy nghĩ khách hàng</th>
+                        <th style="width:120px">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="matrixBody">
+                    <!-- Rendered by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="action-bar">
+            <button class="btn btn-text" onclick="goToStep(1)">
+                <span class="material-icons-round">arrow_back</span>
+                Quay lại
+            </button>
+            <div></div>
+        </div>
+    </section>
+
+    <!-- SCREEN 3: IDEAS -->
+    <section class="screen" id="screen-3">
+        <div class="section-title mb-2">
+            <span class="material-icons-round">lightbulb</span>
+            3 Idea Banner – Chọn 1 để sinh ảnh
+        </div>
+        <div id="selectedContext" style="margin-bottom:16px; padding:12px 16px; background:var(--md-sys-color-surface); border-radius:var(--md-sys-shape-corner-md); border:1px solid var(--md-sys-color-outline-variant); font-size:13px; color:var(--md-sys-color-on-surface-variant);">
+        </div>
+        <div class="ideas-grid" id="ideasGrid">
+            <!-- Rendered by JS -->
+        </div>
+        <div class="action-bar">
+            <button class="btn btn-text" onclick="goToStep(2)">
+                <span class="material-icons-round">arrow_back</span>
+                Quay lại
+            </button>
+            <div></div>
+        </div>
+    </section>
+
+    <!-- SCREEN 4: IMAGE RESULT -->
+    <section class="screen" id="screen-4">
+        <div class="section-title mb-2">
+            <span class="material-icons-round">image</span>
+            Ảnh Banner được sinh bởi AI
+        </div>
+        <div class="result-container">
+            <div class="result-image-frame">
+                <img id="resultImage" src="" alt="Generated Banner" style="display:none;">
+                <div class="empty-state" id="imageLoading">
+                    <div class="spinner" style="width:48px;height:48px;border:3px solid var(--md-sys-color-outline-variant);border-top-color:var(--md-sys-color-primary);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px;"></div>
+                    <p>Đang sinh ảnh bằng AI...</p>
+                </div>
+            </div>
+            <div class="result-details">
+                <h3>Prompt đã sử dụng</h3>
+                <div class="prompt-box" id="promptBox"></div>
+                <div class="mt-4 flex gap-2 flex-wrap">
+                    <button class="btn btn-tonal" onclick="copyPrompt()">
+                        <span class="material-icons-round">content_copy</span>
+                        Copy Prompt
+                    </button>
+                    <button class="btn btn-outlined" onclick="regenImage()">
+                        <span class="material-icons-round">refresh</span>
+                        Re-Render
+                    </button>
+                    <button class="btn btn-filled" style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; border: none;" onclick="triggerAntigravityFlow(event)">
+                        <span class="material-icons-round">bolt</span>
+                        Send to Antigravity (Auto Image)
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="action-bar">
+            <button class="btn btn-text" onclick="goToStep(3)">
+                <span class="material-icons-round">arrow_back</span>
+                Quay lại chọn Idea
+            </button>
+            <button class="btn btn-filled" onclick="goToStep(1)">
+                <span class="material-icons-round">restart_alt</span>
+                Tạo Banner mới
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-card">
+        <div class="spinner"></div>
+        <h3 id="loadingTitle">Đang xử lý...</h3>
+        <p id="loadingDesc">AI đang phân tích và sinh nội dung</p>
+    </div>
+</div>
+
+<script>
+// ============================================================
+// STATE
+// ============================================================
+let currentStep = 1;
+let selectedPersonaId = null;
+let selectedPersonaData = null;
+let matrixData = [];
+let selectedPLevel = null;
+let generatedIdeas = [];
+let selectedIdea = null;
+let lastPrompt = "";
+
+const PERSONAS = {
+    1: { name: "Mẹ: Con đã nghỉ", icon: "🔙", desc: "Đã nghỉ trung tâm, muốn quay lại học", segment: 3 },
+    2: { name: "Mẹ: Con sắp nghỉ", icon: "🚧", desc: "Sắp nghỉ trung tâm, muốn duy trì", segment: 3 },
+    3: { name: "Mẹ: Học song song", icon: "🎓", desc: "Đang học trung tâm, app bổ trợ", segment: 3 },
+    4: { name: "Nhà 2 con", icon: "👦👧", desc: "Lớn đã biết chơi, gợi cảm hứng bé nhỏ", segment: 3 },
+    5: { name: "Nhà trắng tinh", icon: "👨‍👩‍👧", desc: "Cả nhà chưa biết gì, cùng khám phá", segment: 3 },
+    6: { name: "Mẹ bố học cùng con", icon: "👨‍👧", desc: "Con đã biết chơi, bố mẹ học đệm đàn", segment: 3 },
+    7: { name: "Người lớn mới học", icon: "🌱", desc: "Mới tinh, tìm công cụ xả stress cá nhân", segment: 12 },
+    8: { name: "Người lớn học lại", icon: "💔", desc: "Đã học cách khác và từng bỏ cuộc", segment: 12 },
+};
+
+// ============================================================
+// INITIALIZATION
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+    renderPersonaGrid();
+});
+
+function renderPersonaGrid() {
+    const grid = document.getElementById('personaGrid');
+    grid.innerHTML = '';
+    
+    Object.entries(PERSONAS).forEach(([id, p]) => {
+        const card = document.createElement('div');
+        card.className = 'persona-card';
+        card.dataset.id = id;
+        card.onclick = () => selectPersona(parseInt(id));
+        card.innerHTML = `
+            <span class="segment-badge ${p.segment === 3 ? 'seg-3' : 'seg-12'}">
+                ${p.segment === 3 ? 'Phụ huynh' : 'Cá nhân'}
+            </span>
+            <div class="card-icon">${p.icon}</div>
+            <div class="card-title">${p.name}</div>
+            <div class="card-desc">${p.desc}</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function selectPersona(id) {
+    selectedPersonaId = id;
+    
+    // Update UI
+    document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
+    document.querySelector(`.persona-card[data-id="${id}"]`).classList.add('selected');
+    document.getElementById('btnStep1Next').disabled = false;
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function goToStep(step) {
+    // Update stepper
+    document.querySelectorAll('.step-item').forEach((item, idx) => {
+        item.classList.remove('active', 'completed');
+        if (idx + 1 < step) item.classList.add('completed');
+        if (idx + 1 === step) item.classList.add('active');
+    });
+    document.querySelectorAll('.step-divider').forEach((div, idx) => {
+        div.classList.toggle('completed', idx + 1 < step);
+    });
+    
+    // Switch screen
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(`screen-${step}`).classList.add('active');
+    currentStep = step;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ============================================================
+// STEP 2: LOAD MATRIX
+// ============================================================
+async function goToStep2() {
+    if (!selectedPersonaId) return;
+    
+    showLoading("Đang tải dữ liệu...", "Đọc Customer Journey Map cho Persona đã chọn");
+    
+    try {
+        const res = await fetch(`/api/agent6/plevel-matrix?persona_id=${selectedPersonaId}`);
+        const data = await res.json();
+        
+        selectedPersonaData = data.persona;
+        matrixData = data.matrix;
+        
+        // Update header
+        const p = PERSONAS[selectedPersonaId];
+        document.getElementById('matrixIcon').textContent = p.icon;
+        document.getElementById('matrixPersonaName').textContent = p.name;
+        document.getElementById('matrixPersonaDesc').textContent = p.desc;
+        
+        // Render matrix
+        renderMatrix(matrixData);
+        
+        hideLoading();
+        goToStep(2);
+    } catch (err) {
+        hideLoading();
+        alert('Lỗi tải dữ liệu: ' + err.message);
+    }
+}
+
+function renderMatrix(data) {
+    const tbody = document.getElementById('matrixBody');
+    tbody.innerHTML = '';
+    
+    let lastFunnel = '';
+    
+    data.forEach(row => {
+        // Funnel separator
+        if (row.funnel !== lastFunnel) {
+            const funnelName = row.funnel === 'acquisition' ? '🔍 ACQUISITION (Nhận thức → Cân nhắc)' : '🔄 RETENTION & REVENUE (Trải nghiệm → Mua → Giới thiệu)';
+            const ftr = document.createElement('tr');
+            ftr.className = 'funnel-header';
+            ftr.innerHTML = `<td colspan="5">${funnelName}</td>`;
+            tbody.appendChild(ftr);
+            lastFunnel = row.funnel;
+        }
+        
+        const tr = document.createElement('tr');
+        
+        // Level chip color
+        let levelClass = '';
+        if (row.level_sales === 'L1') levelClass = 'l1';
+        else if (row.level_sales === 'L2') levelClass = 'l2';
+        else if (row.level_sales === 'L3') levelClass = 'l3';
+        else if (row.level_sales === 'L4') levelClass = 'l4';
+        
+        const levelHtml = row.level_sales ? `<span class="level-chip ${levelClass}">${row.level_sales}</span>` : '';
+        
+        // Shorten thought for display
+        let thought = row.thought || '';
+        thought = thought.replace(/\n/g, '<br>');
+        
+        const hasThought = row.thought && row.thought.trim().length > 5;
+        
+        tr.innerHTML = `
+            <td class="code-cell">${row.code}</td>
+            <td>${levelHtml}</td>
+            <td class="stage-cell">${row.stage_name || ''}</td>
+            <td class="thought-cell">${thought}</td>
+            <td class="action-cell">
+                ${hasThought ? `<button class="btn-select-pain" onclick="selectPainPoint('${row.code}', this)">Chọn</button>` : ''}
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// ============================================================
+// STEP 3: GENERATE IDEAS
+// ============================================================
+async function selectPainPoint(code, btnEl) {
+    const row = matrixData.find(r => r.code === code);
+    if (!row) return;
+    
+    selectedPLevel = row;
+    
+    showLoading("AI đang brainstorm...", `Sinh 3 Idea cho ${PERSONAS[selectedPersonaId].name} × ${code}`);
+    
+    try {
+        const res = await fetch('/api/agent6/generate-ideas', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                persona_id: selectedPersonaId,
+                plevel_code: row.code,
+                plevel_thought: row.thought,
+                plevel_stage: row.stage_name
+            })
+        });
+        const data = await res.json();
+        generatedIdeas = data.ideas || [];
+        
+        // Show context
+        document.getElementById('selectedContext').innerHTML = `
+            <strong>${PERSONAS[selectedPersonaId].icon} ${PERSONAS[selectedPersonaId].name}</strong> × 
+            <strong style="color:var(--md-sys-color-primary)">${row.code}</strong> – ${row.stage_name}
+            <br><em style="opacity:0.7">"${(row.thought || '').substring(0, 120)}..."</em>
+        `;
+        
+        renderIdeas(generatedIdeas);
+        
+        hideLoading();
+        goToStep(3);
+    } catch (err) {
+        hideLoading();
+        alert('Lỗi sinh Idea: ' + err.message);
+    }
+}
+
+function renderIdeas(ideas) {
+    const grid = document.getElementById('ideasGrid');
+    grid.innerHTML = '';
+    
+    const gradients = [
+        'linear-gradient(135deg, #004a77 0%, #5b3d6e 100%)',
+        'linear-gradient(135deg, #3b4858 0%, #004a77 100%)',
+        'linear-gradient(135deg, #5b3d6e 0%, #93000a 100%)'
+    ];
+    
+    ideas.forEach((idea, idx) => {
+        const card = document.createElement('div');
+        card.className = 'idea-card';
+        card.innerHTML = `
+            <div class="idea-visual-preview" style="background:${gradients[idx]}">
+                <div class="layout-tag">Layout ${idea.layout || '?'}</div>
+                <div class="preview-headline">${idea.headline_vi || 'HEADLINE'}</div>
+                <div class="preview-sub">${idea.sub_headline_vi || ''}</div>
+            </div>
+            <div class="idea-body">
+                <div class="idea-desc">
+                    <strong>Visual:</strong> ${idea.visual_description || ''}<br>
+                    <strong>Mood:</strong> ${idea.mood || ''}
+                </div>
+                <div class="idea-rationale">${idea.rationale || ''}</div>
+                <button class="btn btn-filled" style="width:100%" onclick="selectIdeaAndGenerate(${idx})">
+                    <span class="material-icons-round">auto_awesome</span>
+                    Sinh ảnh từ Idea này
+                </button>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// ============================================================
+// STEP 4: GENERATE IMAGE
+// ============================================================
+async function selectIdeaAndGenerate(idx) {
+    selectedIdea = generatedIdeas[idx];
+    
+    goToStep(4);
+    document.getElementById('resultImage').style.display = 'none';
+    document.getElementById('imageLoading').style.display = 'block';
+    
+    try {
+        const res = await fetch('/api/agent6/generate-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                persona_id: selectedPersonaId,
+                idea: selectedIdea
+            })
+        });
+        const data = await res.json();
+        
+        lastPrompt = data.prompt || '';
+        document.getElementById('promptBox').textContent = lastPrompt;
+        
+        if (data.image_url) {
+            const img = document.getElementById('resultImage');
+            img.src = data.image_url;
+            img.style.display = 'block';
+            document.getElementById('imageLoading').style.display = 'none';
+        } else {
+            document.getElementById('imageLoading').innerHTML = `
+                <span class="material-icons-round" style="font-size:48px;color:var(--accent-amber)">warning</span>
+                <p style="margin-top:8px">Ảnh chưa được sinh. Bạn có thể copy prompt bên phải và dán vào công cụ AI khác.</p>
+            `;
+        }
+    } catch (err) {
+        document.getElementById('imageLoading').innerHTML = `
+            <span class="material-icons-round" style="font-size:48px;color:var(--md-sys-color-error)">error</span>
+            <p style="margin-top:8px">Lỗi: ${err.message}</p>
+        `;
+    }
+}
+
+async function regenImage() {
+    if (!selectedIdea) return;
+    document.getElementById('resultImage').style.display = 'none';
+    document.getElementById('imageLoading').style.display = 'block';
+    document.getElementById('imageLoading').innerHTML = `
+        <div class="spinner" style="width:48px;height:48px;border:3px solid var(--md-sys-color-outline-variant);border-top-color:var(--md-sys-color-primary);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px;"></div>
+        <p>Re-rendering ảnh...</p>
+    `;
+    await selectIdeaAndGenerate(generatedIdeas.indexOf(selectedIdea));
+}
+
+async function triggerAntigravityFlow(event) {
+    if (!lastPrompt || !selectedIdea) return;
+    
+    // Send data to the bridge endpoint
+    try {
+        const payload = {
+            persona_name: PERSONAS[selectedPersonaId].name,
+            idea: selectedIdea,
+            prompt: lastPrompt,
+            timestamp: new Date().toISOString()
+        };
+        
+        const res = await fetch('/api/agent6/auto-bridge', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        if (data.status === 'success') {
+            // Visual feedback for the user
+            const btn = event.target.closest('.btn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<span class="material-icons-round">sync</span> Đã gửi tín hiệu...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }, 3000);
+        }
+    } catch (err) {
+        console.error("Bridge failed:", err);
+        alert("Không thể gửi tín hiệu tự động. Vui lòng copy prompt thủ công.");
+    }
+}
+
+function copyPrompt() {
+    navigator.clipboard.writeText(lastPrompt).then(() => {
+        const btn = event.target.closest('.btn');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<span class="material-icons-round">check</span> Đã copy!';
+        setTimeout(() => btn.innerHTML = orig, 1500);
+    });
+}
+
+// ============================================================
+// LOADING HELPERS
+// ============================================================
+function showLoading(title, desc) {
+    document.getElementById('loadingTitle').textContent = title || 'Đang xử lý...';
+    document.getElementById('loadingDesc').textContent = desc || '';
+    document.getElementById('loadingOverlay').classList.add('active');
+}
+function hideLoading() {
+    document.getElementById('loadingOverlay').classList.remove('active');
+}
+</script>
+
+</body>
+</html>

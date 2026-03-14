@@ -1,0 +1,12 @@
+python-dotenv
+google-generativeai
+fastapi
+uvicorn
+requests
+opencv-python
+Pillow
+librosa
+soundfile
+moviepy
+imageio-ffmpeg
+webrtcvad

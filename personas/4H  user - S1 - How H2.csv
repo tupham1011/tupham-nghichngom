@@ -1,0 +1,51 @@
+Thiết kế lộ trình 4H cho Segment 1: để đạt được mục tiêu của người học,,,,,,Xác định LCC,,,,Mô tả LCT x LCC (expert),,,,,,,,,
+,,,,,,,,,,Trong app ,,Ngoài app,,Lộ trình,Mô tả MVP,To-do,Impact,Backlog,Prioritise
+User persona - L2-A6,Pain point (assumption),Mục tiêu học,Milestones (LO),Measurement trạng thái đạt LO (I x C),Why do we have to learn this?,Lecture,Interaction,Practice,Examination,Cần nhạc cụ,Không cần nhạc cụ,Cần nhạc cụ,Không cần nhạc cụ,,,,,,
+,"Người dùng không hiểu học với app là học gì? Không có syllabus, không biết học tới đây thì học gì tiếp, để đạt được mục tiêu
+
+Không biết các bộ kỹ năng cần có để học chơi được một bài hát cơ bản là gì  (hoặc là chơi được bài họ thích) ? ",Học cho có thêm kỹ năng mới,Có được lộ trình học và hiểu được cách dùng app để học trong lộ trình đó,Người dùng tự nói ra được lộ trình và cách học,,"L1. Lý thuyết về cách học piano, vai trò của app
+L2. Syllabus x calendar chơi được bài ở LO1 với đúng điều kiện của bản thân
+L3. Cách xác định trình độ hiện tại, phương pháp học phù hợp với bản thân",,,"E1. (optional) Bài test: (MVP) Bài test đánh giá đầu vào để gợi ý lộ trình
+E2. Đưa ra google calendar, người học tự fill lên khung giờ học và nội dung học
+--> reward: support của Simpia cho bất kỳ LCC nào trong lộ trình đó",,,,,,,,,,
+Level hiện tại: trình độ? biết gì chưa?,"Người dùng lo không biết bao giờ mới chơi được bài hát hoàn chỉnh
+
+Bài hát hoàn chỉnh là như thế nào?","Muốn học để giải trí thôi
+(Returner Beginner)",Xác định bài hát đúng trình độ tập để không bị nản làm mục tiêu (Outcome của hành trình học),Người học hài lòng với bài hát mình sẽ được tập và háo hức ...,"Dễ drop, quan trọng phải biết mình muốn học gì thì mới không drop
+--> Việc của giáo viên/ buddy là xác định bài hát họ muốn chơi để tạo động lực, xác định xem cần ability gì trong quá trình học","L1. Các dòng nhạc để chơi piano. Sự khác nhau trong tập luyện, biểu diễn ...",I1 Assisstant (cùng gu dòng nhạc) tư vấn chọn bài phù hợp,Tập melody tay phải của bài hát đã chọn. (copy cat),Chơi được signature bằng 1 tay sau 30' tập,"(opt 1)
+
+P1.1 Tập static mode tay phải mình thích
+
+E1.1 Tập với backing track và có chấm điểm tay signature melody bài mình thích",,"(opt 2)
+
+P1.1 Quay video hướng dẫn tập tay phải signature bài mình thích
+
+E1.1 Quay video đoạn mình tập và gửi cho giáo viên Simpia góp ý","L1.1 Video giới thiệu các dòng nhạc và song collection
+
+I1.1 Buổi assisstant nhạc pop","LIPE: 
+L1.1
+I1.1
+P1.1
+E1.1","3 video, 4 song collection cho 4 dòng nhạc, 1 buổi tương tác hỏi đáp, 2 buổi tập với đàn dài 30'",,,,
+,"Người dùng không nhớ/ không nắm được nhạc lý cơ bản, dẫn tới đọc sheet nhạc chậm, không cảm thấy mình đang tiếp thu, thực hành sai nhiều","Muốn đọc được sheet nhạc, không muốn học vẹt, nhưng học khó quá","Có thể tự đọc, xướng âm 1 sheet nhạc 2 tay",,,"L1. Cheatsheet về nhạc lý cơ bản tối thiểu để đọc được sheet nhạc
+L2. VIdeo bài giảng về những kĩ năng tối thiểu khi đọc được bản nhạc",I1. Duolingo Music,,"E1. Bộ test flashcard về nhạc lý, từ các ký hiệu nhạc tới việc đọc bản nhạc
+E2. Reading note challenge",,,,,,,,,,
+,"Người dùng thử học trung tâm nhưng đa số học cổ điển, học youtube thì không kỹ, học khoá online thì toàn video ",Muốn tự học để chơi dc những bài mình thích ,,,,,,,,,,,,,,,,,
+,"Nhà có con không tập trung được, đã thử các phương pháp khác, mời thầy cô dạy nhưng đều không thấy sự hiệu quả ","Muốn con mình cải thiện sự tập trung, chơi được nhạc cụ ",,,,,,,,,,,,,,,,,
+Con số 0,"Chưa hiểu và chưa tin phương pháp, Sợ không nhớ được nốt nhạc, không nắm được nhạc lý, không biết học app là học gì, không biết học với app có hiệu quả không","Động lực (Pull) chính là Học để giải trí, muốn chơi được bài hát, muốn học nhanh, học nhẹ nhàng, vui vẻ",,,,,,,,Validate Assumption,Growth,"Làm rõ cách validate: Đầu phễu, giữa phễu",Chưa có các yếu tố prioritize,,,,,,
+Con số 0.25,"Không tin bản thân
+Chủ yếu là 1. Sợ không duy trì được thói quen, sợ không đủ kiên trì, sợ lười học 
+2. Sợ học khó, không thấy kết quả, sợ không biết có học được không",,,,,,,,,Input solution,Expert edu,,,,,,,,
+user R1,"mới bắt đầu học gặp khó khăn, hoang mang không biết mình có đang đi đúng hướng không, liệu như vậy có hiệu quả không
+-Sợ khó, sợ không hiểu, không theo kịp
+-thấy khó, thấy ngợp
+-Tay còn yếu
+-Không biết cách học này có hiệu quả không
+-Lo lắng về hiệu quả
+-Lo lắng tự học không có ai hỗ trợ",,,,,,,,,,,,,,,,,,
+,"Không hiểu lộ trình của app như thế nào, học nốt xong thì sao nữa, khi nào thì chơi được 1 bài
+Không biết có được học bài hát không
+Có lộ trình cho người mới hoàn toàn, chưa biết gì cả ko, bắt đầu học như thế nào, từ đâu đến đâu ko vậy?
+",,,,,,,,,,,,,,,,,,
+,"Không biết học như thế nào là hiệu quả (nên học ngày mấy buổi, nên dành thời gian tối thiểu bao nhiêu)",,,,,,,,,,,,,,,,,,
+,Không biết nếu học với app đều đặn và chăm chỉ thì sau 1 năm học được gì?,,,,,,,,,,,,,,,,,,

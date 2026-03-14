@@ -1,0 +1,78 @@
+ ,,,,,,,,,,,,,,,,
+Sub-Segment 1 ,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Ability ,Background (Demographic) ,Investment ,,,,,,,,,,,,,,
+,,Well-being ,,,,,Intellectual ,,,,Health,,Social,,,
+,,35-50 ,,50+ ,,,35-50 ,,50+ ,,35-50 ,50+ ,35-50 ,,50+ ,
+"bận rộn, tài chính trung bình -> khá ",Nhân viên VP ,"(1) (2)
+Music/ Piano Lover","(4) 
+Tạo lifelong hobby ","
+(1)
+Music Lover","
+(3)
+Học để đỡ buồn chán",,,,"(6)
+Avoide memory loss","(8) 
+Tinh thần trẻ hóa, minh mẫn",,"(9)
+Cải thiện tay đau, mắt yếu","(10) 
+Kết nối, cải thiện mqh ","(11) 
+Làm gương cho con cháu","(10) 
+Kết nối hội nhóm",
+"có thời gian, tài chính khá -> tốt ",Nội trợ/ kinh doanh tại gia ,,,,,,,,,,,,,,,
+"có thời gian, tài chính trung bình -> khá ",Công nhân viên chức ,,,,,"(5)
+ Duy trì học tiếp ","(6)
+Improve focus memory capability","(7) 
+Rèn kỷ luật, kiên nhẫn",,,,,,,,
+"bận rộn, tài chính khá -> tốt ","Thu nhập cao, trí thức ",,,,,,,,,,,,,,,"(11) 
+Làm gương"
+"bận rộn, tài chính vừa đủ -> khá",Lao động thể chất ,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Definition of Sub-Segments ,, ,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Nhóm 35-50 tuổi ,,,,,,,,,,,,,,,,
+,(1) Music (2) Piano Lover ,Link profile ,Tệp mua auto nhưng học được 1 tháng ,,,,,,,,,,,,,
+Well-being Investment ,,Demographic ,,,,,,,,,,,,,,
+,,User Story ,,,,,,,,,,,,,,
+,(4) Lifelong hobby ,Link profile ,Anh Hiếu (TP. HN) ,,,,,,,,,,,,,
+,,Demographic ,"35 tuổi - tri thức, công nghệ cao",,,,,,,,,,,,,
+,,User Story ,"Tìm hiểu các kỹ năng để chọn theo đuổi lâu dài, lo đến già không có năng khiếu, sở thích (sợ thời gian chết nhiều) ",,,,,,,,,,,,,
+,(6) Enhance thinking ,Link profile ,???,,,,,,,,,,,,,
+Intellectual Investment ,,Demographic ,,,,,,,,,,,,,,
+,,User Story ,,,,,,,,,,,,,,
+,"(7) Rèn kỷ luật, kiên nhẫn ",Link profile ,???,,,,,,,,,,,,,
+,,Demographic ,,,,,,,,,,,,,,
+,,User Story ,,,,,,,,,,,,,,
+,(10) Cải thiện mqh ,Link profile ,Anh Hiếu (HN) ,,,,,,,,,,,,,
+,,Demographic ,35 tuổi - Doanh nhân,,,,,,,,,,,,,
+,,User Story ,"Bố con ít nói chuyện do ít điểm chung, chơi đàn để cả nhà có hoạt động giải trí cùng nhau ",,,,,,,,,,,,,
+,(11) Làm gương cho con,Link profile ,Anh Hoang Bao Bui (HN) ,,,,,,,,,,,,,
+,,Demographic ,U40 - Gia đình 2 con ,,,,,,,,,,,,,
+,,User Story ,"Nhà có đàn mà con không học, bố học để làm gương cho con, hướng dẫn con ",,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Nhóm trên 50 tuổi ,,,,,,,,,,,,,,,,
+,(1) Music Lover ,Link profile ,,,,,,,,,,,,,,
+,,Demographic ,,,,,,,,,,,,,,
+,,User Story ,,,,,,,,,,,,,,
+,(3) Find retirement joy ,Link profile ,"Cô Mai (73 tuổi), Chị Thu (54 tuổi) ",,,,,,,,,,,,,
+,,Demographic ,Công nhân viên chức ,,,,,,,,,,,,,
+,,User Story ,"Nghỉ hưu, nhiều thời gian rảnh cảm thấy buồn chán nên tìm cách giải trí ",,,,,,,,,,,,,
+,(4) Life-long learning,Link profile ,,,,,,,,,,,,,,
+,,Demographic ,,,,,,,,,,,,,,
+,,User Story ,"?trước nhiều trách nghiệm, áp lực, giờ có thời gian muốn trải nghiệm những thứ mới vừa sức mình ",,,,,,,,,,,,,
+,(6) Memory Loss (Minh mẫn) ,Link profile ,Cô Ngọc (Q7) ,,,,,,,,,,,,,
+,,Demographic ,"83 tuổi - Trí thức cao, giảng viên ",,,,,,,,,,,,,
+,,User Story ,"Có tuổi trí nhớ kém đi, muốn duyt rì hoạt động nãi để cải thiện trí nhớ ",,,,,,,,,,,,,
+,(8) Adapt youthful mindset ,Link profile ,Cô Lan Phương (HN) ,,,,,,,,,,,,,
+,,Demographic ,Ngoài 60 tuổi - Giáo viên trung học ,,,,,,,,,,,,,
+,,User Story ,"Muốn năng động, tinh thần trẻ. học mọi thứ: thể thao, ngôn ngữ, kỹ năng",,,,,,,,,,,,,
+,"(9) Cải thiện tay đau, mắt yếu ",Link profile ,Cô Lan Phương (HN),,,,,,,,,,,,,
+,,Demographic ,Ngoài 60 tuổi - trụ cột ,,,,,,,,,,,,,
+,,User Story ,"Tay đau, tê tay, tập đàn để máu tay lưu thông tốt, phục hồi chức năng tay ",,,,,,,,,,,,,
+,(10) Kết nối hội nhóm ,Link profile ,Cô Nga (Q7) ,,,,,,,,,,,,,
+,,Demographic ,65 tuổi - Thành viên hội văn nghệ ,,,,,,,,,,,,,
+,,User Story ,"Thêm kỹ năng để kết nối với các hội nhóm nghệ thuật, đóng góp năng khiếu",,,,,,,,,,,,,
+,(11) Làm gương cho cháu ,Link profile ,Chị Thu (cận nghỉ hưu),,,,,,,,,,,,,
+,,Demographic ,55 tuổi - Nhân viên VP ,,,,,,,,,,,,,
+,,User Story ,"Cháu từng học mà bỏ, tháy tiếc năng khiếu cháu, học để hướng dẫn, động viên cháu học ",,,,,,,,,,,,,

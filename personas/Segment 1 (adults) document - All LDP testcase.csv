@@ -1,0 +1,98 @@
+Landing Page Testing Campaign ,,,,,,
+,,,,,,
+,,,,,,
+Process Testing ,,,,,,
+Phần 1,Xác định Test Objective ,,,,,
+Phần 2 ,Chọn assumptions ,,,,,
+Phần 3 ,Define of Done ,,,,,
+Phần 4 ,Xác định test cases & process ,,,,,
+Phần 5 ,Results & Timeline ,,,,,
+,,,,,,
+Overview ,,,,,,
+,,Phase 1 ,,Phase 2 ,,
+1. Testing Objective ,Xác định được cấu trúc LDP có CVR cao nhất cho lead từ ads storytelling (Trung niên_H4) ,CVR1 ,,CVR2,,
+,,,,,,
+,,,,,,
+2. Assumptions list ,"Chia tệp lead LDP thành hai nhóm: Impulsive & Critical 
+- Impulsive (quyết định cảm tính) 
+- Critical (quyết định lý tính) ",Xác định tỷ trọng Impulsive Buyer & Critical trong LDP ,"Impulsive Buyer cần form ở đầu để điền thông tin luôn - đúng vậy không ? 
+Form ở vị trí nào với Impulsive Buyer là đúng ? ",,,
+,,,"Critical Buyer cần flow thông tin để họ explore, lý do điền form cho họ thông tin gì ? 
+Định nghĩ CVR1 với Critical Buyer nên là để lại thông tin hay không 
+-> sau đó phễu sale của nhóm Critical và nhóm Impulsive cũng khác nhau - do P-Level khác nhau 
+-> nên phân chia P-Level ở mức nào 
+-> LDP chỉ tập trung hứng form lead của nhóm nào (Impulsive Buyer) 
+-> Flow auto sales hoặc support cho nhóm Critical nằm ở đâu - để luôn giữ được contact với nhóm này trong quá trình họ học thử 
+
+* Ghi lại flow của hai nhóm này trong quá trình explore và evaluate -> điền lead form ? 
+",,,
+,,,,,,
+,,,,,,
+3. Define of done ,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+4. Test case ,,LDP CTA phụ (Đăng Ký HỌC THỬ) ,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+Journey Assumption của nhóm Impulsive ,Duy trì emotional / storytelling trên LDP ,,,,,
+,Chỗ điền thông tin ngay lập tức - trigger CTA mạnh ,,,,,
+,,,,,,
+,,,,,,
+Journey Assumption của nhóm Critical ,Xem thông tin - tìm hiểu thông tin trên landing page trước ,,,,,
+,Tải ứng dụng về học thử trải nghiệm ,,,,,
+,Cần có support hoặc onboard học thử hoặc tài liệu hỗ trợ học thử ,,,,,
+,Học thử xong được thì họ cần gì ? ,,,,,
+,"Lộ trình cá nhân hóa để bắt đầu học được, nhìn thấy H3, dễ dàng bắt đầu đăng ký học hơn ",,,,,
+,"Ưu đãi & các dịch vụ đi kèm khi đăng ký gói học (họ nhận được gì after purchase) 
+","* Đặt câu hỏi: Tại sao các sản phẩm edtech lại có nhu cầu về afterpurchase support nhiều vậy ? Khi nào thì người dùng có nhu cầu này về một sản phẩm -> xác định được trạng thái của người dùng về sản phẩm ? Từ đó, cung cấp giải pháp gì cho nhu cầu đó ? ",,,,
+,Chỗ đăng ký và thanh toán dễ dàng và tiện lợi cho họ ,,,,,
+,Kênh kết nối sau này - đảm bảo brand sẽ đi cùng họ sau này (??? - brand engagement) - phễu referral,,,,,
+,,,,,,
+Các câu hỏi khác ,"Nên tập trung dựa trên tỷ trọng để serve được hết - hay LDP là touchpoint để kết nối sang những kênh khác
+VD: LDP tập trung Impulsive Buyer 
+Sau đó link sang trang web (những lead sang trang web là Critical Lead 
+Critical Lead sẽ có journey như thế nào 
+Explore thông tin 
+Tải ứng dụng dùng thử ",,,,,
+,"Câu hỏi chính - dùng LDP để làm gì ? Mục đích của LDP khác với website ở đâu ? 
+Tỷ lệ objective của LDP là gì ? 
+Với thị trường Việt (đối tượng người lớn segment 1) - thì LDP target objective gì ? CVR1 (nhóm nào ?) hay educate ? hay CVR2 auto ???
+Các sản phẩm khác trên thị trường Việt có sử dụng LDP với mục tiêu như vậy không ? ",,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,Assumption List ,Testing Object ,Test Case ,DoD ,Output (measure) ,Next Step 
+Nhóm Critical ,CTA CVR cho nhóm Critical chưa được tối ưu: ,,,,,
+,- CTA đăng ký học mislead -> không điền ,"Tạo form đăng ký học thử (scroll Depth 50%) 
+input hiện tượng: 
+- 80-90% CRV1 có scroll depth là 50% (all segments) ",Xác định behavior của nhóm critical active hay passive ,Button học thử <> Button tai-app ,"Record segment nhóm critical vào LDP (1,2,3)",
+,- Nhóm critical muốn tự tìm hiểu (high ability) - không qua sales ,Tạo button tải app (scroll Depth 75%) ,,,"Record CVR 1, CVR2 (sales cycle)
+- Nhóm điền form ngay đầu (assume Impulsive) 
+- Nhóm điền form học thử (assume Critical Passive) 
+- Nhóm tai app không điền form (assume Critical Active) ",
+,- Nhóm critical có nhu cầu instant explore ,"Thêm video/ explain SA SB để họ xem được luôn trên LDP 
+*** concern: khác biệt giữ LDP và Website 
+-> Xác định objective của LDP trong phễu UA ",,,,"Xác định các hiện tượng, bao giờ thì cần có Website. "
+,,,,,,
+Nhóm Impulsive ,"Điền thông tin ở ngay đầu luôn, không qua explore ",Giữ form đăng ký ở đầu tiên (Hero Section) ,,,,
+,CVR phụ thuộc vào urgency tactics ,Thêm urgent tactics trên LDP (context of use sản phẩm) ,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,Assumption,,,
+,Goal,Explore xem người dùng cần gì sau chữ Learn more trong content ads anh lộc,,Qualitive 1-1 phone interview,,
+,User,Trung niên,,"Quantitative/ đo bằng tỉ lệ tương tác, engagement rate",,
+,,45-60,,,,
+,,"Học cho absolute beginner, học dễ dàng, học nhanh",,,,
+,,Technical thấp,,,,
+,,Không chủ động tìm hiểu thông tin,,,,
+,User Story,"Là 1 người đàn ông năm nay đã 45 tuổi, tôi chưa từng động vào đàn piano bao giờ, nhưng tôi thấy ông này trên phây búc chơi đc piano nghe hay lắm, trông thư thái, phong độ lắm, tôi khoái, thấy bảo cũng rẻ","Nên tôi đi tìm hiểu xem liệu mình có học được không, chắc là sẽ đc thôi, ngta làm được thì mình làm được, thử nghĩ xem, mình đang rảnh mỗi buổi chiều, học vào thời điểm này là được này, mua thôi",,,
+,Define of Done,,,,,
