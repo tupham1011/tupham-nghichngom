@@ -104,10 +104,13 @@ async def agent6_generate_image(req: Agent6ImageRequest):
 async def agent6_auto_bridge(request: Request):
     try:
         req = await request.json()
-        bridge_file = Path(__file__).resolve().parent / "agent6_bridge.json"
+        # Vercel has a read-only filesystem except for /tmp
+        is_vercel = os.getenv("VERCEL") == "1"
+        bridge_file = Path("/tmp" if is_vercel else ".") / "agent6_bridge.json"
+        
         with open(bridge_file, 'w', encoding='utf-8') as f:
             json.dump(req, f, indent=2, ensure_ascii=False)
-        return {"status": "success"}
+        return {"status": "success", "info": "saved to /tmp" if is_vercel else "saved local"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
