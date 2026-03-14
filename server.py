@@ -31,7 +31,7 @@ app.add_middleware(
 
 @app.get("/")
 async def read_root():
-    return {"message": "Agent 6 API is running. Go to /agent6 to view UI."}
+    return FileResponse(STATIC_DIR / "agent6.html")
 
 @app.get("/agent6")
 async def read_agent6():
